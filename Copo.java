@@ -1,64 +1,55 @@
 package av1;
 
 public class Copo {
-	//Construtor	
-	public Copo() {
-	this.capacidadeMaxima = 350;
-	this.Cor="verde";
-	this.capacidadeAtual = capacidadeAtual;
-	}
-		
+	//Atributos
+			public int capacidadeMaxima;
+			public int capacidadeAtual;
+			public String Cor;
+			
+	//construtor	
+	public Copo(int capacidadeMaxima, int capacidadeAtual, String cor) {
+			this.capacidadeMaxima = capacidadeMaxima;
+			this.capacidadeAtual = capacidadeAtual;
+			Cor = cor;
+		}
+
+		}
 	
 	public int getCapacidadeMaxima() {
-		return capacidadeMaxima;
-	}
-	public void setCapacidadeMaxima(int capacidadeMaxima) {
-		this.capacidadeMaxima = capacidadeMaxima;
-	}
-	public int getCapacidadeAtual() {
-		return capacidadeAtual;
-	}
-	public void setCapacidadeAtual(int capacidadeAtual) {
-		this.capacidadeAtual = capacidadeAtual;
-	}
-	public String getCor() {
-		return Cor;
-	}
-	public void setCor(String cor) {
-		Cor = cor;
-	}
-	public boolean getCopoVazio() {
-		return copoVazio;
-	}
-	public void setCopoVazio(boolean b) {
-		this.copoVazio = b;
-	}
+				return capacidadeMaxima;
+			}
 
+			public void setCapacidadeMaxima(int capacidadeMaxima) {
+				this.capacidadeMaxima = capacidadeMaxima;
+			}
 
+			public int getCapacidadeAtual() {
+				return capacidadeAtual;
+			}
 
+			public void setCapacidadeAtual(int capacidadeAtual) {
+				this.capacidadeAtual = capacidadeAtual;
+			}
 
-	//Atributos
-	int capacidadeMaxima;
-	int capacidadeAtual;
-	String Cor;
-	boolean copoVazio;
-	private int setesvaziar;
-	private int a;
-	public int qdt ;
-	
-	
+			public String getCor() {
+				return Cor;
+			}
+
+			public void setCor(String cor) {
+				Cor = cor;
+			}
+
 	//Metodos
-	public void adicionarLiquido(int a) {
-		int qtd = this.getCapacidadeAtual() + a ;
-			if(this.capacidadeAtual>this.capacidadeMaxima) {
+	public void adicionarLiquido(int qtd) {
+		qtd += this.getCapacidadeAtual();
+			if(this.capacidadeAtual + qtd > this.capacidadeMaxima) {
 		System.out.println("O liquido esborrou!");
 			}				
 	}
-	public void retirarLiquido(int r) {
-		int qtd = this.capacidadeAtual-r;
+	public void retirarLiquido(int qtd) {
+		 this.capacidadeAtual -= qtd;
 				
-					
-		
+							
 	}
 	
 	public void obterInformacoes() {
@@ -68,22 +59,10 @@ public class Copo {
 	}
 	
 	public void esvaziar() {
-		this.setesvaziar =(this.getCapacidadeMaxima() - getCapacidadeMaxima());
-		
-	
-		System.out.println("O copo esta totalmente vazio!");
+		this.capacidadeAtual = 0;
+			System.out.println("O copo esta totalmente vazio!");
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
 
 
