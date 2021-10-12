@@ -13,8 +13,6 @@ public class Copo {
 			Cor = cor;
 		}
 
-		}
-	
 	public int getCapacidadeMaxima() {
 				return capacidadeMaxima;
 			}
